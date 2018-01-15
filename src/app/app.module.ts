@@ -1,9 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-
-import { AppComponent } from './app.component';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { AppComponent } from "./app.component";
 import { PoolApiService } from "../shared/services/pool-api.service";
+import { HttpClientModule } from "@angular/common/http";
 
 
 @NgModule({
@@ -11,7 +10,8 @@ import { PoolApiService } from "../shared/services/pool-api.service";
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [PoolApiService],
   bootstrap: [AppComponent]

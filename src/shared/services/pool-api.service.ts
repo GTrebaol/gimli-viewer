@@ -1,7 +1,8 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { Response } from "@angular/http";
+import "rxjs/add/operator/map";
+import "rxjs/add/operator/retryWhen";
 
 const API_URL = 'https://api.nanopool.org/v1/eth/';
 
@@ -9,11 +10,12 @@ const API_URL = 'https://api.nanopool.org/v1/eth/';
 export class PoolApiService {
 
   private walletAddress = '0xf5e8e86bd94423d5587103b6f38f31baf0fed979';
+  private nbRetries = 5;
 
   constructor(private httpClient: HttpClient) {
   }
 
-  public getInfo(): Observable<any> {
+  public getInfo() {
     return this.httpClient.get(API_URL + 'user/' + this.walletAddress);
   }
 

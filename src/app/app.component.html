@@ -10,16 +10,16 @@
 <div id="nav">
   <div id="nav_holder">
 
-<!--    <ul>
-      <li class="first"><a href="#"> Home </a> </li>
-      <li><a href="#"> Rules </a> </li>
-      <li><a href="#"> Help </a> </li>
-      <li><a href="#"> Forum </a> </li>
-    </ul>
+    <!--    <ul>
+          <li class="first"><a href="#"> Home </a> </li>
+          <li><a href="#"> Rules </a> </li>
+          <li><a href="#"> Help </a> </li>
+          <li><a href="#"> Forum </a> </li>
+        </ul>
 
-    <ul class="right">
+        <ul class="right">
 
-    </ul>-->
+        </ul>-->
 
   </div>
 </div>
@@ -34,10 +34,7 @@
 
   <div class="announcement">
     <ul id="items">
-
-      <!-- Replace these with your messages -->
-
-      <li>Ha que coucou</li>
+      <li class="font_logo">0xf5e8e86bd94423d5587103b6f38f31baf0fed979</li>
     </ul>
 
   </div>
@@ -70,9 +67,22 @@
 
 
     <!-- This is dummy text. You can change it to whatever you like -->
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacinia lorem blandit erat bibendum pharetra. In odio sapien, sodales in tempus nec, feugiat a ante. Sed tincidunt vestibulum lacus at posuere. Nulla metus justo, pretium in tempor a, condimentum non metus. Suspendisse enim velit, rhoncus eu vehicula ut, molestie non neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent rutrum, lacus ut condimentum dapibus, leo enim faucibus lectus, a dictum lacus ipsum non nulla. Maecenas tempus magna quis nunc aliquam sit amet venenatis felis vulputate. Fusce vel nisl odio, eget suscipit tellus.
+    <ul>
+      <li>Hashrate : {{gimli?.hashrate}}</li>
+      <li>Balance : {{gimli?.balance}}</li>
+      <li>
+        Hashrate :
+        <ul>
+          <li>last hour : {{gimli?.avgHashrate?.h1}}</li>
+          <li>last 3 hours : {{gimli?.avgHashrate?.h3}}</li>
+          <li>last 6 hours : {{gimli?.avgHashrate?.h6}}</li>
+          <li>last 12 hours : {{gimli?.avgHashrate?.h12}}</li>
+          <li>last 24 hours : {{gimli?.avgHashrate?.h24}}</li>
+        </ul>
+      </li>
+      <li>LastShare : {{gimli?.workers[0].lastshare}}</li>
+    </ul>
 
-      Aliquam erat volutpat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam hendrerit sagittis posuere. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla facilisi. Sed imperdiet enim in diam venenatis vel faucibus velit vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse mauris quam, porta molestie volutpat et, consectetur eu nisi. Etiam at risus massa, non accumsan tortor. Sed tortor ligula, rhoncus eget fermentum ut, tincidunt eu tortor. Quisque urna lectus, posuere iaculis tempor id, lobortis sed dui. Vivamus ultricies luctus eros non molestie. Nunc vitae erat lectus. Proin elit lectus, cursus et cursus ac, posuere porta felis. Ut vitae felis et ipsum vulputate convallis. Proin tincidunt orci a dolor congue ut tempor quam egestas.</p>
 
     <div class="footer">
 
@@ -95,7 +105,8 @@
   <div class="sidebar">
 
     <!-- Change To Online or Offline depending on your server status -->
-    <h3>Server Status: </h3> <div class="offline"></div>
+    <h3>Server Status: </h3>
+    <div ng="offline"></div>
 
   </div>
 
