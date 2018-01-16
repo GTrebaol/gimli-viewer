@@ -61,15 +61,11 @@
 
   <!-- Right Content -->
 
-  <div class="right_content">
-
-    <h1> Welcome! </h1> <!-- Title -->
-
-
+  <div>
     <!-- This is dummy text. You can change it to whatever you like -->
     <ul>
-      <li>Hashrate : {{gimli?.hashrate}}</li>
-      <li>Balance : {{gimli?.balance}}</li>
+      <li>Current Hashrate : {{gimli?.hashrate}}</li>
+      <li>Balance : {{gimli?.balance}} eth / {{this.fiatValue | currency}}</li>
       <li>
         Hashrate :
         <ul>
@@ -80,43 +76,15 @@
           <li>last 24 hours : {{gimli?.avgHashrate?.h24}}</li>
         </ul>
       </li>
-      <li>LastShare : {{gimli?.workers[0].lastshare}}</li>
+      <li>LastShare : {{gimli?.workers[0].lastshare*1000 | date:'long'}}</li>
     </ul>
 
 
     <div class="footer">
 
-      <p>Copyright &copy; 2012 - Server Name
+      <p>Copyright &copy; 2017 - Gimli-Viewer
 
     </div>
-
-  </div>
-
-
-  <!-- Sidebar. You can either have one long sidebar or multiple "widgets" -->
-
-  <div class="sidebar">
-
-    <h3 class="address">Server Address</h3>
-    <p class="address">555.5555.555:25565</p>
-
-  </div>
-
-  <div class="sidebar">
-
-    <!-- Change To Online or Offline depending on your server status -->
-    <h3>Server Status: </h3>
-    <div ng="offline"></div>
-
-  </div>
-
-  <div class="sidebar">
-
-    <h3> Example Header </h3>
-    <p>This is where you can put a server description or anything else!</p>
-    <h3>
-
-    </h3>
 
   </div>
 </div>
